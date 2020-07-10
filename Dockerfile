@@ -18,10 +18,7 @@ LABEL com.github.actions.name="Nancy for GitHub Actions" \
     com.github.actions.description="Run Sonatype Nancy as part of your GitHub Actions workflow."
 
 RUN apk add --no-cache curl && \
-    mkdir -p /usr/local/ && \
-    curl -L -o /usr/local/nancy \
-        https://github.com/sonatype-nexus-community/nancy/releases/download/v0.0.33/nancy-linux.amd64-v0.0.33 && \
-    chmod +x /usr/local/nancy
+    mkdir -p /usr/local/
 
 COPY entrypoint.sh /entrypoint.sh
 

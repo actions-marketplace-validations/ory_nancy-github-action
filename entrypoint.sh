@@ -14,4 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+set -Eeuox pipefail
+
+download_url=$(curl -s https://api.github.com/repos/sonatype-nexus-community/nancy/releases | \
+  jq -r '.[] | select(.tag_name=="'"${version}"'") | .assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
+
+curl -L -o /usr/local/nancy $download_url
+chmod +x /usr/local/nancy
+
 /usr/local/nancy $GITHUB_WORKSPACE/$1
