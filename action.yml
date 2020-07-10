@@ -1,4 +1,4 @@
-name: 'Nancy for GitHub Actions'
+name: ORY's Nancy for GitHub Actions
 author: 'ORY'
 description: 'Run Sonatype Nancy as part of your GitHub Actions workflow.'
 inputs:
