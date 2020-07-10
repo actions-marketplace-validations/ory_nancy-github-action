@@ -16,7 +16,7 @@
 
 set -euox pipefail
 
-download_url=$(curl -sL https://api.github.com/repos/sonatype-nexus-community/nancy/releases/latest | jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'.amd64")) | select(.name | contains("tar.gz")) | .browser_download_url')
+download_url=$(curl -sL https://api.github.com/repos/sonatype-nexus-community/nancy/releases/latest | jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'.amd64")) | select(.name | contains("tar.gz") | not) | .browser_download_url')
 
 curl -L -o /usr/local/nancy "$download_url"
 chmod +x /usr/local/nancy
