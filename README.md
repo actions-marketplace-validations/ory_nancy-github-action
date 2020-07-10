@@ -6,6 +6,8 @@
 
 Run [Sonatype Nancy](https://github.com/sonatype-nexus-community/nancy) as part of your GitHub Actions workflow.
 
+This fork always uses the latest nancy version
+
 ## Inputs
 
 - `target` (optional): The path to the go.sum or Gopkg.lock file.
@@ -25,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Nancy
-      uses: ory/nancy-github-action@v0.0.4
+      uses: ory/nancy-github-action@v0
       # with:
       #   target: go.sum
 ```
