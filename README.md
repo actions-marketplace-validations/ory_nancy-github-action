@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Nancy
-      uses: ory/nancy-github-action@2.0
+      uses: ory/nancy-github-action@0.0.1
       # with:
       #   target: go.sum
 ```
